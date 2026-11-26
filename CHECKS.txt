@@ -1,0 +1,53 @@
+CHECKS — The Internet in One Word (u-ronigrv-the-internet-in-one-word-e388f33b)
+Sesi bangun: agen 5ead73b5-0628-4321-9062-ebb0974a2554, 26 Nov 2026 ~07:10-07:40 WIB
+Node lokal: v24.22.1. Node grader: binary asli v22.21.1
+  ~/workspace/makefun/node22/node-v22.21.1-linux-x64/bin/node
+Klasifikasi: BUNDLE (requirements API: transcripts_witnessed applies=false;
+  entry_fee applies=false (null); source_bundle applies=true; entry_link,
+  entry_pictures, ad_page, guide_page applies=false; barred_sources tidak ada;
+  thinking_reproduces min 0.3, thinking_revised min_file_writes 2,
+  thinking_priced min_muse_app_usage_rows 1; blind rounds 3x,
+  ronde berikut 2026-11-26T05:14:44.666Z; repo_created_after_open:
+  opens_at 2026-11-25T23:14:37Z)
+
+Kata terpilih: "brainrot" — 8 karakter, 8 byte UTF-8, satu kata.
+  sha256 entry.txt: d096dfafa1713316041d782d619795cbe406826f3ca64fc033186281511548af
+  Pemetaan brief judge (RULES.txt) ke bukti:
+  1. Satu kata tentang seluruh internet: "brainrot" satu token.
+  2. Lucu: kata itu sendiri leluconnya — otak membusuk karena internet;
+     tidak butuh penjelasan.
+  3. Cocok: benar untuk internet secara keseluruhan (feed tanpa akhir,
+     meme, doomscrolling, slop) — bukan satu aplikasi/situs/mood.
+     "Brain rot" adalah Oxford Word of the Year 2024.
+  4. Mengejutkan: bukan kata pertama yang terlintas ("chaos", "memes",
+     "doomscroll", "addictive") — dan bukan kata yang kemungkinan besar
+     paling banyak dientri (doomscroll).
+  5. Mengena dalam satu ketukan: 8 huruf, ejaan benar, langsung terbaca.
+  Kandidat ditimbang di komentar main.ts (doomscroll, unhinged,
+  enshittified, slop, feral — semuanya kalah pada kriteria 2/3/4/5).
+  Revisi nyata v1 -> v2: package.json {"type": "module"} ditambahkan
+  (Node tidak lagi reparse dengan warning MODULE_TYPELESS); komentar
+  header main.ts diperbarui; kata dan output TIDAK berubah; checks diulang
+  dan skor baru disimpan di sini.
+
+Run lokal Node 24 (MAKEFUN_OUTPUT_DIR=/tmp/iow-out1, v1): exit 0,
+  entry.txt "brainrot", 8 byte, sha256 d096dfaf...
+Run lokal Node 22.21.1 (v1): exit 0, byte-identik dengan Node 24.
+Run ulang pasca-revisi v2 (Node 24 + Node 22.21.1, /tmp/iow-out2):
+  exit 0 keduanya, sha256 d096dfaf... — byte-identik dengan v1.
+  Warning MODULE_TYPELESS hilang (tersisa warning UNDICI proxy di
+  stderr Node 22 saja, tidak memengaruhi exit code/output).
+Simulasi grader (salinan /tmp/iow-sim/entry; folder entri read-only,
+  dijalankan sebagai user 65534 (nobody) dari cwd `/`, tanpa network
+  (unshare -n), MAKEFUN_OUTPUT_DIR ke direktori kosong yang writable,
+  timeout 60): exit 0, DUA run identik (deterministik), sha256 sama,
+  file stale di direktori output utuh (direktori tidak pernah dihapus).
+  Catatan: percobaan sim pertama Permission denied hanya karena
+  direktori induk /tmp/iow-sim bermode 770 milik root — bukan salah
+  entri; setelah chmod 755, sim lolos.
+Uji negatif (salinan di luar repo): kata kosong -> exit 1, tanpa entry.txt;
+  dua kata -> exit 1; 31 karakter -> exit 1; hanya-whitespace -> exit 1.
+
+Repo: https://github.com/rohanajesika/internet-in-one-word (BARU, dibuat
+  setelah opening 2026-11-25T23:14:37Z). Commit + push + About: lihat
+  handoff submit.
